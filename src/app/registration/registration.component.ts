@@ -16,27 +16,16 @@ export class RegistrationComponent implements OnInit {
   user: User = new User;
   position: Position;
   public selectedFile: any = 'Upload your photo';
-  isShown= false;
-  // selectedPosition: any = 'Select your position ';
-  // styleSelectedFile: String = ' color: rgb(141, 140, 140);';
+  centered = false;
+  disabled = false;
+  unbounded = false;
+
+  radius: number;
+  color: string;
   myForm: FormGroup;
-
-  // validColor = '#b7b7b7 ';
-  // invalidColor = '#f44336';
-  // validNameColor = this.validColor;
-  // validNameBorderColor = this.validColor;
-  // validMailColor = this.validColor;
-  // validMailBorderColor = this.validColor;
-  // validPlaceholderMail = 'Your email';
-
-
-
-  // photoControl = new FormControl;
   filename: any;
 
   constructor(private usersService: UsersService) { }
-
-
 
   registerUser() {
   }
@@ -54,51 +43,17 @@ export class RegistrationComponent implements OnInit {
     this.filename = this.user.photo.replace(/.*\\/, '');
     if (this.filename !== null) {
       console.log(this.filename);
-      // this.styleSelectedFile = 'color: rgb(239, 108, 0);';
       return this.selectedFile = this.filename;
     }
   }
-  // onPositionChange() {
-  //   this.selectedPosition = '';
 
-  // }
-
-  uploadImage() {
-    // return this.onPhotoChange();
-  }
-  // validationInput() {
-  //   if (this.myForm.controls['userName'].invalid && this.myForm.controls['userName'].touched) {
-
-  //     this.validNameColor = this.invalidColor;
-  //     this.validNameBorderColor = this.invalidColor;
-  //     console.log('this.invalidColor :' + this.invalidColor );
-  //   }
-  //   if (this.myForm.controls['userEmail'].invalid && this.myForm.controls['userEmail'].touched) {
-  //     // this.validPlaceholderMail = 'Error';
-  //     this.validMailColor = this.invalidColor;
-  //     this.validMailBorderColor = this.invalidColor;
-  //   }
-  // }
-
-
+  uploadImage() { }
 
   onSubmit() {
     console.log(this.myForm);
   }
   ngOnInit() {
     this.fetchPositions();
-    // this.myForm = new FormGroup({
-    //   userName: new FormControl('', Validators.required),
-    //   userEmail: new FormControl('', [Validators.required,
-    //   Validators.pattern('^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$')]),
-
-    //   userPhone: new FormControl('', [Validators.required,
-    //   Validators.pattern('^[\+]{0,1}380([0-9]{9})$')]),
-
-    //   userPosition: new FormControl(),
-    //   userPhoto: new FormControl()
-    // });
-//  this.validationInput();
   }
 
 }

@@ -1,0 +1,347 @@
+@import '../../styles.scss';
+
+
+
+// ========== footer========
+
+footer {
+  @extend %flex-column;
+  background-color: $secondary;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  color: $white;
+}
+
+.footer {
+  background-color: $secondary;
+  color: $white;
+  width: 1024px;
+  min-height: 314px;
+
+  @media screen and(max-width: 768px) {
+    width: 100%;
+  }
+
+  a {
+    font-family: $font-primary;
+    font-size: 1.6rem;
+    color: $white;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary-hover;
+    }
+  }
+
+  &__header {
+    @extend %flex-row;
+    justify-content: stretch;
+    border-bottom: 1px solid $secondary-hover;
+    color: $white;
+    width: 1024px;
+    height: 85px;
+
+    @media screen and(min-width: 1025px) {
+      border: none;
+    }
+
+    @media screen and(max-width: 768px) {
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    @media screen and(max-width: 426px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      min-height: 220px;
+    }
+
+    &-logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      a {
+        background-image: url(../../assets/image/logoFooter.png);
+        background-repeat: no-repeat;
+        width: 134px;
+        height: 24px;
+        margin-left: 48px;
+
+        @media screen and(max-width: 768px) {
+          margin-left: 25px;
+        }
+
+        @media screen and(max-width: 426px) {
+          margin: 5px;
+        }
+
+        &:hover {
+          background-image: url(../../assets/image/logoOr.svg);
+          background-size: 134px;
+        }
+      }
+    }
+
+    &-nav {
+      @extend %flex-row;
+      justify-content: flex-end;
+      width: 824px;
+      height: 85px;
+
+      @media screen and(max-width: 768px) {
+        width: 510px;
+        // margin-right: 25px;
+      }
+
+      @media screen and(max-width: 426px) {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        min-height: 150px;
+      }
+
+      a {
+        margin-right: 29px;
+
+        @media screen and(max-width: 768px) {
+          margin-right: 25px;
+        }
+
+        @media screen and(max-width: 426px) {
+          margin: 5px;
+        }
+      }
+    }
+
+  }
+
+  &__header-border-bottom {
+    display: none;
+    width: 936px;
+    height: 1px;
+    margin-left: 45px;
+    border-bottom: 1px solid $secondary-hover;
+
+    @media screen and(min-width: 1025px) {
+      display: block;
+    }
+  }
+
+  // ======= footer__links==============
+  &__link {
+    @extend %flex-footer-row;
+    margin: 23px 40px 0 0;
+
+    @media screen and(max-width: 768px) {
+      margin-right: 25px;
+    }
+
+    @media screen and(max-width: 426px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-right: 0;
+    }
+
+    &-data {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      margin: 0 10px 0px 48px;
+
+      @media screen and(max-width: 768px) {
+        margin-left: 25px;
+      }
+
+      @media screen and(max-width: 426px) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+      }
+
+      a {
+        @extend %flex-row;
+        font-size: 2.0rem;
+        font-weight: 400;
+        margin-right: 10px;
+
+        @media screen and(max-width: 426px) {
+          margin: 0;
+        }
+      }
+
+      &-data {
+        margin: 0 10px 19px 0px;
+      }
+    }
+
+    &-links {
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      margin: 0 0px 0px 48px;
+
+      @media screen and(max-width: 768px) {
+        margin-left: 25px;
+      }
+
+      @media screen and(max-width: 426px) {
+        display: none;
+      }
+
+      a {
+        font-size: 1.6rem;
+        margin: 0px 6px 11px 6px;
+      }
+    }
+  }
+
+  // ====footer share===========
+  &__share {
+    margin: 15px 43px 0 0;
+    @extend %flex-footer-row;
+
+    @media screen and(max-width: 768px) {
+      margin-right: 25px;
+    }
+
+    @media screen and(max-width: 426px) {
+      flex-direction: column-reverse;
+      align-items: center;
+      margin-right: 0;
+    }
+
+    &-design {
+      font-size: 1.2rem;
+      margin: 10px 0 20px 48px;
+
+      @media screen and(max-width: 426px) {
+        margin: 10px 0 20px;
+      }
+    }
+
+    &-network {
+      @extend %flex-footer-row;
+
+      a {
+        margin-left: 20px;
+
+        @media screen and(max-width: 426px) {
+          margin: 10px;
+        }
+      }
+    }
+
+  }
+}
+
+//=========hover footer link icons=====
+
+#footerMail {
+  background-image: url(../../assets/icons/mail.svg);
+  background-size: 23px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  height: 23px;
+  padding-left: 35px;
+}
+
+#footerMail:hover {
+  background-image: url(../../assets/icons/close-envelopeOr.svg);
+}
+
+#footerPhone {
+  background-image: url(../../assets/icons/phone.svg);
+  background-size: 20px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  height: 23px;
+  padding-left: 35px;
+}
+
+#footerPhone:hover {
+  background-image: url(../../assets/icons/phone-call-buttonOr.svg);
+}
+
+#footerMobile {
+  background-image: url(../../assets/icons/cellphone.svg);
+  background-size: 16px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  height: 28px;
+  padding-left: 35px;
+}
+
+#footerMobile:hover {
+  background-image: url(../../assets/icons/cellphoneOr.svg);
+}
+
+#pinterest {
+  background-image: url(../../assets/icons/pinterest.svg);
+  width: 26px;
+  height: 26px;
+}
+
+#pinterest:hover {
+  background-image: url(../../assets/icons/017-pinterest.svg);
+}
+
+#twitter {
+  background-image: url(../../assets/icons/twitter.svg);
+  width: 26px;
+  height: 26px;
+}
+
+#twitter:hover {
+  background-image: url(../../assets/icons/007-twitter-1.svg);
+}
+
+#instagram {
+  background-image: url(../../assets/icons/instagram.svg);
+  width: 26px;
+  height: 26px;
+}
+
+#instagram:hover {
+  background-image: url(../../assets/icons/020-instagram.svg);
+}
+
+#linkedin {
+  background-image: url(../../assets/icons/linkedin.svg);
+  width: 26px;
+  height: 26px;
+}
+
+#linkedin:hover {
+  background-image: url(../../assets/icons/019-linkedin.svg);
+}
+
+#facebook {
+  background-image: url(../../assets/icons/facebook.svg);
+  width: 26px;
+  height: 26px;
+}
+
+#facebook:hover {
+  background-image: url(../../assets/icons/023-facebook.svg);
+}
+
+
+@media (max-width: 768px) {
+
+  #footerMail,
+  #footerPhone,
+  #footerMobile,
+  #footerMail:hover,
+  #footerPhone:hover,
+  #footerMobile:hover {
+    background: none;
+    padding-left: 0;
+  }
+}

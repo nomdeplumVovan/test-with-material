@@ -1,0 +1,80 @@
+<div class="register"><a name="signUp"></a>
+
+  <div class="background__header"></div>
+
+  <div class="register__h1">Register to get a work</div>
+  <div class="register__h3">Attention! After successful registration and alert,
+    update the list of users in the block from the top</div>
+  <form action="#" name='userForm' novalidate (ngSubmit)="onSubmit()" #userForm='ngForm' class="allForm" #spyForm>
+
+    <div class="register__user">
+      <div *ngIf='name.invalid&&name.dirty&&name.touched' class="error-name"></div>
+      <fieldset>
+
+        <input #name='ngModel' type="text" class="all item-a form-control" placeholder="Your name" name="name"
+          [(ngModel)]='user.name' required maxlength="100" pattern="[A-Za-z]{2,50}$" #spyUserName>
+        <div *ngIf='name.invalid&&name.dirty&&name.touched' class="error">
+          Error
+        </div>
+        <legend class="legend-error">Name</legend>
+      </fieldset>
+
+      <div *ngIf='email.invalid&&email.dirty&&email.touched' class="error-email"></div>
+
+      <fieldset>
+
+        <input #email='ngModel' type="email" class="item-a all" placeholder="Your email" name="email" [(ngModel)]='user.email'
+          required maxlength="100" #spyUserEmail pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$" />
+        <div *ngIf='email.invalid&&email.dirty&&email.touched' class="error">
+          Error
+        </div>
+        <legend class="legend-error">Email</legend>
+      </fieldset>
+
+      <div *ngIf='phone.invalid&&phone.dirty&&phone.touched' class="error-phone"></div>
+
+      <fieldset>
+
+        <input #phone='ngModel' class="item-a form-control" name="userPhone" pattern="^[\+]{0,1}380([0-9]{9})$"
+          placeholder="+380..." [(ngModel)]='user.phone' />
+        <div *ngIf='phone.invalid&&phone.dirty&&phone.touched' class="error">
+          Error
+        </div>
+        <legend class="legend-error">Phone</legend>
+      </fieldset>
+    </div>
+    <!-- <h2>User  {{ user | json }}</h2> -->
+    <div class="register__user position-photo">
+      <div class="register__select-caret item-d">
+        <mat-select class="register__user-select" placeholder="Select your position" required name="userPosition" id="selectPosition"
+          #position='ngModel' [(ngModel)]='user.position' #select>
+          <mat-option *ngFor="let position of positions" [value]="position.name" [id]="position.id" class="register__user-select-option">
+            {{position.name}}
+          </mat-option>
+        </mat-select>
+        <div [hidden]='position.valid||position.pristine' class="error" style="color:#f44336; font-size: 12px; margin-top: 5px;">
+          Error
+        </div>
+      </div>
+
+      <div class="item-d upload__style">
+        <label [style]='styleSelectedFile' class="photo-value">
+          {{selectedFile}}
+        </label>
+        <input type="file" name="userPhoto" id="input__file" class="item-d__input" accept="image/jpeg,image/png,image/gif"
+          #photo='ngModel' [(ngModel)]='user.photo' (ngModelChange)="onPhotoChange()" required>
+        <label matRipple [matRippleCentered]="centered"
+          [matRippleDisabled]="disabled" [matRippleUnbounded]="unbounded" [matRippleRadius]="radius" [matRippleColor]="color"
+          for="input__file" class="button" (click)='uploadImage()' id="upload">Upload</label>
+      </div>
+    </div>
+
+    <div class="register__user-warning">
+      <p>File format jpg up to 5 MB, the minimum size of 70x70px</p>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit" class="signUp" name="Sign up" value="Sign up" [disabled]="userForm.invalid">Sign
+      up</button>
+
+  </form>
+</div>

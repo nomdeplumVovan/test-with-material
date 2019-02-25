@@ -1,0 +1,74 @@
+//  =====color =======
+$primary: #EF6C00;
+$primary-hover: #fc831f;
+$bg-primary-hover:#fc831f33;
+$secondary: #283593;
+$secondary-hover:#5674b9;
+$white: #ffffff;
+$grey-white: #fefefe;
+$grey: #8d8c8c;
+$light-grey: #4c4b4b;
+$black: #000000;
+$opasity: #ffffff99;
+$bg-img:#0000000d;
+$disabled: #d7d7d7;
+$error:#f44336;
+
+
+// =====fonts=====
+$font-primary: 'Source Sans Pro',
+sans-serif;
+$font-secondary: 'Overpass',
+sans-serif;
+$font-third:'PT Sans',
+sans-serif;
+
+
+//  === direction =======
+%flex-row {
+  display: flex;
+  align-items: center;
+}
+
+%flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+%tablet-direction {
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    width: 90vw;
+    margin: 0;
+  }
+
+  @media (max-width: 426px) {
+    flex-direction: column;
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    margin: 0;
+  }
+}
+
+%flex-footer-row {
+  display: flex;
+  justify-content: space-between;
+  text-align: right;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  width: 100%;
+}

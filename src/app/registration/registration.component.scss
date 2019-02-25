@@ -1,0 +1,409 @@
+@import '../../styles.scss';
+
+.register {
+  @extend %flex-column;
+  justify-content: center;
+  width: 100%;
+}
+
+.background__header {
+  width: 100%;
+  height: 65px;
+}
+
+.register__h1 {
+  font-family: $font-secondary;
+  color: $black;
+  font-size: 4.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 42px 0 0 1px;
+
+  @media screen and(max-width: 426px) {
+    font-size: 3rem;
+  }
+}
+
+.register__h3 {
+  font-family: $font-primary;
+  color: $black;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-align: center;
+  height: 18px;
+  margin: 11px 0 61px 0;
+
+  @media screen and(max-width: 768px) {
+    width: 50vw;
+  }
+
+  @media screen and(max-width: 426px) {
+    width: 90vw;
+  }
+}
+
+form {
+  width: 1024px;
+
+  @media screen and(max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    // height: 36px;
+  }
+}
+
+.register__user {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 40px;
+
+  @media screen and(max-width: 768px) {
+    margin: 0 10px;
+  }
+
+  @media screen and(max-width: 426px) {
+    flex-direction: column;
+    align-items: center;
+    width: 290px;
+  }
+}
+
+fieldset {
+  border-radius: 4px;
+  border-width: 1px;
+  box-sizing: border-box;
+  border-style: solid;
+  width: 288px;
+  height: 58px;
+
+  @media screen and(max-width: 768px) {
+    width: 218px;
+    height: 54px;
+  }
+
+  @media screen and(max-width: 426px) {
+    width: 290px;
+    height: 58px;
+    margin: 0 0 42px 0;
+  }
+}
+
+fieldset:first-child {
+  margin: 0 30px 42px 7px;
+
+  @media screen and(max-width: 426px) {
+    width: 290px;
+    margin: 0 0 42px 0;
+  }
+}
+
+
+
+fieldset:nth-child(2),
+fieldset:nth-child(3),
+fieldset:nth-child(4) {
+  margin: 0 30px 42px 0px;
+
+  @media screen and(max-width: 426px) {
+    width: 290px;
+    margin: 0 0 42px 0;
+  }
+}
+
+fieldset:last-child {
+  @media screen and(max-width: 768px) {
+    margin-right: 0;
+  }
+}
+
+legend {
+  font-family: $font-primary;
+  color: $grey;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: left;
+  margin-left: 18px;
+}
+
+.item-a {
+  border: none;
+  background-color: white !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+}
+
+fieldset input {
+  font-family: $font-primary;
+  font-size: 1.6rem;
+  // color:  $grey;
+  outline: none;
+  line-height: 3rem;
+  width: 250px;
+  height: 40px;
+  padding-left: 17px;
+
+  @media screen and(max-width: 768px) {
+    width: 200px;
+    height: 36px;
+  }
+
+  @media screen and(max-width: 426px) {
+    width: 250px;
+    height: 40px;
+  }
+
+  &::placeholder {
+    color: $grey;
+  }
+}
+
+.item-d {
+  display: flex;
+  border-radius: 4px;
+  border: 1px solid $disabled;
+  width: 448px;
+  height: 54px;
+
+  @media screen and(max-width: 768px) {
+    width: 343px;  
+  }
+//   @media screen and(max-width: 426px) {
+//     width: 290px;
+//     margin: 0 0 42px 0;
+//   }
+}
+
+.position-photo {
+  height: 60px;
+  @media screen and(max-width: 426px) {
+    
+    min-height: 180px;
+  }
+}
+
+// ======style  select caret============
+.register__user-select {
+  font-size: 1.6rem;
+  line-height: 5.6rem;
+  color: #393939;
+  padding-left: 12px;
+  cursor: pointer;
+  z-index: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 436px;
+  height: 56px;
+  margin: 0 18px 0px 0px;
+
+  @media screen and(max-width: 768px) {
+    width: 343px;
+    margin-right: 9px;
+  }
+  @media screen and(max-width: 426px) {
+    width: 290px;
+    height: 56px;
+    // margin-bottom: 40px;
+  }
+
+  &-option {
+    &:hover {
+      background-color: $bg-primary-hover;
+    }
+  }
+}
+
+.register__select-caret {
+  @extend %flex-row;
+  overflow: hidden;
+  background: url(../../assets/icons/caret.png) no-repeat;
+  background-position: 97% 50%;
+  width: 448px;
+  height: 54px;
+  margin: 0 30px 12px 6px;
+
+  @media screen and(max-width: 768px) {
+    width: 343px;
+  }
+  @media screen and(max-width: 426px) {
+    width: 290px;  
+    height: 54px; 
+    margin-right: 6px;
+  }
+}
+
+#select-caret {
+  text-align: left;
+  position: absolute;
+  z-index: 5;
+  width: 200px;
+  height: 20px;
+  margin: auto 0;
+  padding-left: 12px;
+}
+
+// ========type:file style=======
+
+.upload__style {
+  align-items: center;
+  justify-content: flex-end;
+  @media screen and(max-width: 426px) {
+    width: 290px;  
+    margin-top: 40px;   
+  }
+}
+
+.photo-value {
+  font-family: $font-primary;
+  color: $grey;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: left;
+}
+
+.item-d input {
+  letter-spacing: 10em;
+  cursor: pointer;
+  z-index: 1;
+  background: transparent;
+  outline: none;
+  position: relative;
+  width: 126px;
+  height: 54px;
+}
+
+.register__user label {
+  color: $grey;
+  font-size: 1.6rem;
+  text-align: center;
+  width: 350px;
+}
+
+.item-d .button {
+  z-index: 5;
+  position: absolute;
+  cursor: pointer;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  border: 2px solid $primary;
+  font-family: $font-primary;
+  color: $primary;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 5rem;
+  text-align: center;
+  background-color: $white !important;
+  width: 126px;
+  height: 52px;
+  @media screen and(max-width: 426px) {
+    // width: 90px;     
+  }
+}
+
+.item-d .button:hover {
+  background-color: #f8e0d5 !important;
+}
+
+
+/* -- form-bottom--- */
+
+.register__user-warning {
+  font-family: $font-primary;
+  color: $grey;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 0 41px 530px;
+  @media screen and(max-width: 768px) {
+    margin: 0 0 41px 320px;
+   }
+   @media screen and(max-width: 426px) {
+    margin: 0 ; 
+    margin-bottom: 41px;
+  }
+
+}
+
+.signUp {
+  border-radius: 4px;
+  // background-color: #d7d7d7;
+  color: $white;
+  background: $primary;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 3rem;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  width: 290px;
+  height: 40px;
+  margin: 0 0 140px 368px;
+
+  @media screen and(max-width: 768px) {
+    margin: 0 0 140px 0px;
+    // height: 36px;
+  }
+
+  &:disabled {
+    color: $grey;
+    background: $disabled;
+  }
+}
+
+.item-d option {
+  font-family: $font-primary;
+  color: $black;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: left;
+  outline: none;
+}
+
+// ====== invalid style ============
+.error {
+  color: $error;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.error~.legend-error {
+  color: $error;
+}
+
+.error-name+fieldset,
+.error-email+fieldset,
+.error-phone+fieldset {
+  border-color: $error;
+  box-sizing: border-box;
+}
+
+.error-name+fieldset:hover,
+.error-email+fieldset:hover,
+.error-phone+fieldset:hover {
+  border: 2px solid $error;
+  box-sizing: border-box;
+}
+
+.error-name+fieldset {
+  margin-left: 7px;
+}
+
+//==== select autocompleet style=========
+
+.mat-option-text {
+  color: $primary;
+}
+
+.register__user-select-option,
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple),
+.mat-select-panel .mat-option.mat-active {
+  background: $white;
+}
+
+.register__user-select-option.mat-option.ng-star-inserted.mat-selected.mat-active {
+  color: $primary;
+  background: $white;
+}

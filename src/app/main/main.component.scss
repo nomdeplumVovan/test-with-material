@@ -1,32 +1,5 @@
 @import '../../styles.scss';
 
-
-// //  =====color =======
-// $primary: #EF6C00;
-// $secondary: #283593;
-// $accent: #C62828;
-// $grey-white: #fefefe;
-// $grey: #8d8c8c;
-// $black: #000;
-
-// // =====fonts=====
-// $font-primary: 'Source Sans Pro', sans-serif;
-// $font-secondary: 'Overpass', sans-serif;
-
-// //  === direction =======
-// %flex-row {
-//   display: flex;
-//   align-items: center;
-// }
-
-// %flex-column {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
-
-
 .background__header {
   width: 100%;
   height: 65px;
@@ -369,14 +342,6 @@
           }
         }
 
-        // 
-
-        //   @media (max-width: 425px) {
-        //     text-align: center;
-        //     width: 90%;
-        //     margin: 0;
-        //   }
-        // }
       }
 
       &-button {
@@ -400,6 +365,8 @@
   &__requirements {
     @extend %flex-column;
     background-image: url("../../assets/image/jonathan-simcoe-125293-unsplash-min.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     min-height: 755px;
     color: $grey-white;

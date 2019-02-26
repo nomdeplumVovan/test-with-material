@@ -50,7 +50,7 @@ export class RegistrationComponent implements OnInit {
   uploadImage() { }
 
   onSubmit() {
-    console.log(this.myForm);
+    console.log(this.user);
   }
   ngOnInit() {
     this.fetchPositions();
